@@ -6,6 +6,10 @@ The project show a list of students through a web page (http://localhost/overvie
 
 There are no students in the database, so the web page and call will be empty, and you'll have to migrate the database with seeding to add 10 students to the database.
 
+You can build the database (if it doesn't yet exist) with seeding by using: `./vendor/bin/sail artisan migrate --seed`
+
+You can rebuild the database with seeding by using: `./vendor/bin/sail artisan migrate:fresh --seed`
+
 ## How do I run this project?
 
 You will need to set up your environment first to run this project with Sail. The [HOWTO: Build a Laravel project with Sail](https://github.com/DC-AO-CR/laravel_build_project) instructs you on how to set up your environment with the right tools and to set up a new Laravel project in a Docker container.
@@ -26,6 +30,16 @@ See [Laravel Sail - Installing Composer dependencies for existing projects](http
 
 * Use the command `./vendor/bin/sail up` in the directory to get the project up and running.
 * Use the command `./vendor/bin/sail artisan migrate` in the directory to build the tables of the database.
+
+## Which classes are needed for seeding in this project?
+
+The following classes are needed 
+
+* [database/migrations/2024_11_13_134137_create_student_table.php](database/migrations/2024_11_13_134137_create_student_table.php)
+* [app/Models/Student.php](app/Models/Student.php)
+* [database/seeders/DatabaseSeeder.php](database/seeders/DatabaseSeeder.php)
+* [database/seeders/StudentSeeder.php](database/seeders/StudentSeeder.php)
+* [database/factories/StudentFactory.php](database/factories/StudentFactory.php)
 
 ## Which commands were used to create the files?
 
